@@ -36,11 +36,12 @@ namespace Siver.Jeff.ObjectPrinter
             if (value == null)
                 return null;
 
-            if (descriptor.PropertyType == typeof(int))
+            var type = descriptor.PropertyType.IsGenericType && descriptor.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? descriptor.PropertyType.GenericTypeArguments[0] : descriptor.PropertyType;
+            if (type == typeof(int))
                 return ((int) value).ToString("#,###");
-            if (descriptor.PropertyType == typeof(double))
+            if (type == typeof(double))
                 return ((double) value).ToString("N");
-            if (descriptor.PropertyType == typeof(DateTime))
+            if (type == typeof(DateTime))
                 return ((DateTime)value).ToString("o");
             return value.ToString();
         }
