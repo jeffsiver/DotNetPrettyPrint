@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Siver.Jeff.ObjectPrinter.Tests
 {
-    public class PrettyPrinterShould
+    public class BasicFormattingTest
     {
         [Fact]
         public void PrintSimpleObject()

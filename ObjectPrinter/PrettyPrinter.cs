@@ -33,6 +33,9 @@ namespace Siver.Jeff.ObjectPrinter
         private string PrintValueType(object o, PropertyDescriptor descriptor)
         {
             var value = descriptor.GetValue(o);
+            if (value == null)
+                return null;
+
             if (descriptor.PropertyType == typeof(int))
                 return ((int) value).ToString("#,###");
             if (descriptor.PropertyType == typeof(double))

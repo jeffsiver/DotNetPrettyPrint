@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NullFormattingTest.cs" />
     <Compile Include="Objects\MyEnum.cs" />
     <Compile Include="Objects\Simple.cs" />
-    <Compile Include="PrettyPrinterShould.cs" />
+    <Compile Include="BasicFormattingTest.cs" />
+    <Compile Include="Objects\SimpleWithNull.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
