@@ -7,7 +7,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
     public class NullFormattingTest
     {
         [Fact]
-        public void HandleNullOutput()
+        public void ShouldHandleNull()
         {
             var simple = SimpleWithNull.BuildWithNulls();
             var printer = new PrettyPrinter();
@@ -17,7 +17,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         }
 
         [Fact]
-        public void HandleStandardOutputOnNullableTypes()
+        public void ShouldHandleOutputOfNullableTypes()
         {
             var simple = SimpleWithNull.BuildWithData();
             var printer = new PrettyPrinter();

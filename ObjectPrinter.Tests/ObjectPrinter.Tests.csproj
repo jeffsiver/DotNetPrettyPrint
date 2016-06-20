@@ -67,11 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericEnumerableTest.cs" />
+    <Compile Include="HandleBasicTypes.cs" />
     <Compile Include="NullFormattingTest.cs" />
     <Compile Include="Objects\MyEnum.cs" />
     <Compile Include="Objects\Simple.cs" />
     <Compile Include="BasicFormattingTest.cs" />
     <Compile Include="Objects\SimpleWithNull.cs" />
+    <Compile Include="Objects\WIthEnumerable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 
 namespace Siver.Jeff.ObjectPrinter.Tests.Objects
 {
-    internal class Simple
+    public class Simple
     {
         public int AnInteger { get; set; }
         public string AString { get; set; }

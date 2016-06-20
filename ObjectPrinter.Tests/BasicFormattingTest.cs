@@ -7,7 +7,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
     public class BasicFormattingTest
     {
         [Fact]
-        public void PrintSimpleObject()
+        public void ShouldPrintSimpleObject()
         {
             var simple = Simple.Build();
             var prettyPrinter = new PrettyPrinter();
