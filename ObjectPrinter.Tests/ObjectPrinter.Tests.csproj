@@ -67,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenericEnumerableTest.cs" />
+    <Compile Include="EnumerableTest.cs" />
     <Compile Include="HandleBasicTypes.cs" />
     <Compile Include="NullFormattingTest.cs" />
     <Compile Include="Objects\MyEnum.cs" />
