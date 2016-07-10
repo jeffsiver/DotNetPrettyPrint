@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Siver.Jeff.ObjectPrinter.Tests.Objects;
 using Xunit;
 using System.Collections;

@@ -9,6 +9,17 @@ namespace Siver.Jeff.ObjectPrinter
 {
     public class PrettyPrinter
     {
+        private readonly IEnumerable<string> _propertyNamesToMask;
+
+        public PrettyPrinter()
+        {
+            _propertyNamesToMask = Enumerable.Empty<string>();
+        }
+        public PrettyPrinter(IEnumerable<string> propertyNamesToMask )
+        {
+            _propertyNamesToMask = propertyNamesToMask;
+        }
+
         public string Print(object o)
         {
             if (o == null) return null;
@@ -18,15 +29,30 @@ namespace Siver.Jeff.ObjectPrinter
 
             if (IsEnumerable(type)) return HandleEnumerable(o);
 
+            return OutputProperties(o);
+        }
+
+        private string OutputProperties(object o)
+        {
             var result = new StringBuilder();
             var properties = TypeDescriptor.GetProperties(o);
             foreach (PropertyDescriptor descriptor in properties)
             {
                 if (result.Length > 0)
                     result.Append("; ");
-                result.Append($"{descriptor.Name}: {Print(descriptor.GetValue(o))}");
+                OutputProperty(o, result, descriptor);
             }
             return result.ToString();
+        }
+
+        private void OutputProperty(object o, StringBuilder result, PropertyDescriptor descriptor)
+        {
+            result.Append(IsPropertyNameInListToMask(descriptor) ? $"{descriptor.Name}: ****" : $"{descriptor.Name}: {Print(descriptor.GetValue(o))}");
+        }
+
+        private bool IsPropertyNameInListToMask(PropertyDescriptor descriptor)
+        {
+            return _propertyNamesToMask.Any(nameToMask => descriptor.Name.CaseInsensitiveContains(nameToMask));
         }
 
         private bool IsSimpleType(Type type)

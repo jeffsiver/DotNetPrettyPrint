@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Siver.Jeff.ObjectPrinter.Tests
 {
-    public class HandleBasicTypes
+    public class HandleValueTypesTest
     {
         [Fact]
         public void ShouldHandlePrettyPrintingString()
