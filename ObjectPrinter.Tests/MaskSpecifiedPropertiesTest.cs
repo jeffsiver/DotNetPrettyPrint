@@ -10,7 +10,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         public void MaskSingleVariableExactWordMatchDifferentCase()
         {
             var printer = new PrettyPrinter(new [] {"password"});
-            var result = printer.Print(ForMasking.Builder());
+            var result = printer.Print(ForMasking.Build());
             result.Should().Be("UserId: user; Password: ****; Email: email; FirstName: first; LastName: last; AnotherEmailAddress: another email; MailAddress: mailing");
         }
 
@@ -18,7 +18,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         public void MaskMultiplePropertiesFromSingleName()
         {
             var printer = new PrettyPrinter(new [] {"email"});
-            var result = printer.Print(ForMasking.Builder());
+            var result = printer.Print(ForMasking.Build());
             result.Should().Be("UserId: user; Password: password; Email: ****; FirstName: first; LastName: last; AnotherEmailAddress: ****; MailAddress: mailing");
         }
 
@@ -26,7 +26,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         public void MaskMultipleNames()
         {
             var printer = new PrettyPrinter(new [] {"lastname", "PASSWORD", "email"});
-            var result = printer.Print(ForMasking.Builder());
+            var result = printer.Print(ForMasking.Build());
             result.Should().Be("UserId: user; Password: ****; Email: ****; FirstName: first; LastName: ****; AnotherEmailAddress: ****; MailAddress: mailing");
         }
     }

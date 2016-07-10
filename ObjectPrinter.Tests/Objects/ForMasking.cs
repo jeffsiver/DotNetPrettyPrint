@@ -10,7 +10,7 @@
         public string AnotherEmailAddress { get; set; }
         public string MailAddress { get; set; }
 
-        public static ForMasking Builder()
+        public static ForMasking Build()
         {
             return new ForMasking
             {

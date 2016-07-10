@@ -11,7 +11,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         public void ShouldHandleEnumerableWithSimpleType()
         {
             var prettyPrinter = new PrettyPrinter();
-            var result = prettyPrinter.Print(WithEnumerable.BuildWithData());
+            var result = prettyPrinter.Print(WithEnumerable.Build());
             result.Should().Be("StringList: [ first, second, third,  ]");
         }
 
