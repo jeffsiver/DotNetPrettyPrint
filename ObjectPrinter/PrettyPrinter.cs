@@ -10,6 +10,7 @@ namespace Siver.Jeff.ObjectPrinter
     public class PrettyPrinter
     {
         private readonly IEnumerable<string> _propertyNamesToMask;
+        private ICollection<object> _printedObjects;
 
         public PrettyPrinter()
         {
@@ -21,6 +22,13 @@ namespace Siver.Jeff.ObjectPrinter
         }
 
         public string Print(object o)
+        {
+            _printedObjects = new List<object>();
+
+            return PrintObject(o);
+        }
+
+        private string PrintObject(object o)
         {
             if (o == null) return null;
 
@@ -34,6 +42,9 @@ namespace Siver.Jeff.ObjectPrinter
 
         private string OutputProperties(object o)
         {
+            if (_printedObjects.Contains(o)) return null;
+            _printedObjects.Add(o);
+
             var result = new StringBuilder();
             var properties = TypeDescriptor.GetProperties(o);
             foreach (PropertyDescriptor descriptor in properties)
@@ -47,7 +58,16 @@ namespace Siver.Jeff.ObjectPrinter
 
         private void OutputProperty(object o, StringBuilder result, PropertyDescriptor descriptor)
         {
-            result.Append(IsPropertyNameInListToMask(descriptor) ? $"{descriptor.Name}: ****" : $"{descriptor.Name}: {Print(descriptor.GetValue(o))}");
+            result.Append(IsPropertyNameInListToMask(descriptor) ? $"{descriptor.Name}: ****" : GetPrintValue(o, descriptor));
+        }
+
+        private string GetPrintValue(object o, PropertyDescriptor descriptor)
+        {
+            var value = descriptor.GetValue(o);
+            if (value == null) return $"{descriptor.Name}: ";
+            var result = PrintObject(value);
+            if (result == null) return $"{descriptor.Name}: **Cycle**";
+            return $"{descriptor.Name}: {result}";
         }
 
         private bool IsPropertyNameInListToMask(PropertyDescriptor descriptor)
@@ -80,11 +100,11 @@ namespace Siver.Jeff.ObjectPrinter
             foreach (var innerObject in (IEnumerable) value)
             {
                 if (result.Length > 0)
-                    result.Append(", ");
-                result.Append($"{Print(innerObject)}");
+                    result.Append(" }, { ");
+                result.Append($"{PrintObject(innerObject)}");
             }
-            result.Insert(0, "[ ");
-            result.Append(" ]");
+            result.Insert(0, "[ { ");
+            result.Append(" } ]");
             return result.ToString();
         }
 

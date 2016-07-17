@@ -16,7 +16,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests.Objects
                 Id = 12,
                 Name = "the name of this is name",
                 Values = new List<string> { "first", "second"},
-                SimpleList = new []{Simple.Build()}
+                SimpleList = new []{Simple.Build(), Simple.Build()}
             };
 
         }

@@ -12,7 +12,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         {
             var prettyPrinter = new PrettyPrinter();
             var result = prettyPrinter.Print(WithEnumerable.Build());
-            result.Should().Be("StringList: [ first, second, third,  ]");
+            result.Should().Be("StringList: [ { first }, { second }, { third }, {  } ]");
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         {
             var prettyPrinter = new PrettyPrinter();
             var result = prettyPrinter.Print(ComplexEnumerable.Build());
-            result.Should().Be("Id: 12; Name: the name of this is name; Values: [ first, second ]; SimpleList: [ AnInteger: 1,012; AString: string; ADateTime: 2016-04-12T14:15:16.0000000Z; ADouble: 1,015.12; MyEnum: Value2 ]");
+            result.Should().Be("Id: 12; Name: the name of this is name; Values: [ { first }, { second } ]; SimpleList: [ { AnInteger: 1,012; AString: string; ADateTime: 2016-04-12T14:15:16.0000000Z; ADouble: 1,015.12; MyEnum: Value2 }, { AnInteger: 1,012; AString: string; ADateTime: 2016-04-12T14:15:16.0000000Z; ADouble: 1,015.12; MyEnum: Value2 } ]");
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace Siver.Jeff.ObjectPrinter.Tests
         {
             var prettyPrinter = new PrettyPrinter();
             var result = prettyPrinter.Print((IEnumerable) new [] {"one", "two", "three"});
-            result.Should().Be("[ one, two, three ]");
+            result.Should().Be("[ { one }, { two }, { three } ]");
         }
     }
 }

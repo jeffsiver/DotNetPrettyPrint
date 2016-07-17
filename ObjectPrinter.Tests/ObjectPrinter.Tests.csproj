@@ -67,11 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CycleTest.cs" />
     <Compile Include="EnumerableTest.cs" />
     <Compile Include="HandleValueTypesTest.cs" />
     <Compile Include="MaskSpecifiedPropertiesTest.cs" />
     <Compile Include="NullFormattingTest.cs" />
     <Compile Include="Objects\ComplexEnumerable.cs" />
+    <Compile Include="Objects\CycleObjects.cs" />
     <Compile Include="Objects\ForMasking.cs" />
     <Compile Include="Objects\MyEnum.cs" />
     <Compile Include="Objects\Simple.cs" />
