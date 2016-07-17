@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ObjectPrinter")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Object Pretty Print")]
+[assembly: AssemblyDescription("Format objects for logging. Considered entire object tree when creating result.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ObjectPrinter")]
+[assembly: AssemblyCompany("Jeff Siver")]
+[assembly: AssemblyProduct("Pretty Printer")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
