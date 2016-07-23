@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace Siver.Jeff.ObjectPrinter.Tests
+namespace JeffSiver.ObjectPrinter.Tests
 {
     public class HandleValueTypesTest
     {

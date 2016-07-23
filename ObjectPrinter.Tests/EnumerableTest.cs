@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
-using Siver.Jeff.ObjectPrinter.Tests.Objects;
+﻿using System.Collections;
+using FluentAssertions;
+using JeffSiver.ObjectPrinter.Tests.Objects;
 using Xunit;
-using System.Collections;
 
-namespace Siver.Jeff.ObjectPrinter.Tests
+namespace JeffSiver.ObjectPrinter.Tests
 {
     public class EnumerableTest
     {

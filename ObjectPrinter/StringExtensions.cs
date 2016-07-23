@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Siver.Jeff.ObjectPrinter
+namespace JeffSiver.ObjectPrinter
 {
     internal static class StringExtensions
     {

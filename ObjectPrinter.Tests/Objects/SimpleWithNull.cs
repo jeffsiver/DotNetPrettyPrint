@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Siver.Jeff.ObjectPrinter.Tests.Objects
+namespace JeffSiver.ObjectPrinter.Tests.Objects
 {
     public class SimpleWithNull
     {

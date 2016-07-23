@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace Siver.Jeff.ObjectPrinter
+namespace JeffSiver.ObjectPrinter
 {
     public class PrettyPrinter
     {

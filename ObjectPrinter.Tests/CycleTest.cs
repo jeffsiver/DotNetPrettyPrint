@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using Siver.Jeff.ObjectPrinter.Tests.Objects;
+using JeffSiver.ObjectPrinter.Tests.Objects;
 using Xunit;
 
-namespace Siver.Jeff.ObjectPrinter.Tests
+namespace JeffSiver.ObjectPrinter.Tests
 {
     public class CycleTest
     {
